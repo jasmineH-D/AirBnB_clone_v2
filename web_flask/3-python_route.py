@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def index():
     """/: display “Hello HBNB!"""
-    return 'Hello HBNB!'
+    return "Hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
@@ -23,9 +23,13 @@ def Cvalue(text):
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python_is_cool(text='is cool'):
-    return 'Python {}'.format(text.replace('_', ' '))
+def Pyvalue(text='is cool'):
+    """
+    display “Python ”, followed by the value of the text
+    variable (replace underscore _ symbols with a space )
+    """
+    return 'Python ' + text.replace('_', ' ')
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port='5000')
